@@ -36,7 +36,7 @@ class NotesTest < ApplicationSystemTestCase
 
   test "should destroy Note" do
     visit note_url(@note)
-    click_on "Destroy this note", match: :first
+    click_on "Delete this note", match: :first
 
     assert_text "Note was successfully destroyed"
   end

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  root "notes#index"
-  resources :notes
-
   resources :notes do
     collection do
-      get :pinned
+      get "pinned"
     end
   end
+  root "notes#index"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
