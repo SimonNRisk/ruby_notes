@@ -7,8 +7,7 @@
 <div id="notes">
   <% @notes.each do |note| %>
     <%= render note %>
-    <small><%= note.created_at.strftime("%b %d, %Y %H:%M") %></small>
-    
+      <small><%= ktown_time(note.created_at) %></small>
     <p>
       <%= link_to "Show this note", note %>
     </p>

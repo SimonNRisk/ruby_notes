@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+  <nav>
+    <%= link_to "All Notes", notes_path %> |
+    <%= link_to "New Note", new_note_path %>
+  </nav>
+  <hr>
+
   <head>
     <title><%= content_for(:title) || "Quicknotes" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
