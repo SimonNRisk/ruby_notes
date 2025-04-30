@@ -4,10 +4,16 @@
     <%= note.title %>
   </p>
 
+  <% if note.pinned %>
+    <p>📌 This note is pinned!</p>
+  <% end %>
+
+
   <p>
     <strong>Body:</strong>
     <%= note.body %>
   </p>
+
 
   <% if note.created_at.min % 2 == 0 %>
     <p style="color: green;">

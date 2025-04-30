@@ -1,6 +1,10 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show edit update destroy ]
 
+  def pinned
+    @notes = Note.where(pinned: true)
+    render :index
+  end
   # GET /notes or /notes.json
   def index
     @notes = Note.where("LENGTH(title) > 5")
@@ -60,11 +64,11 @@ class NotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
-      @note = Note.find(params.expect(:id))
+      @note = Note.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.expect(note: [ :title, :body ])
+      params.require(:note).permit(:title, :body, :pinned)
     end
 end

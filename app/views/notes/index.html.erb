@@ -4,14 +4,16 @@
 
 <h1>My Notes</h1>
 
-<div id="notes">
-  <% @notes.each do |note| %>
-    <%= render note %>
-      <small><%= ktown_time(note.created_at) %></small>
-    <p>
-      <%= link_to "Show this note", note %>
-    </p>
-  <% end %>
-</div>
+<% if @notes.any? %>
+  <div id="notes">
+    <% @notes.each do |note| %>
+      <%= render note %>
+      <p><%= link_to "Show this note", note %></p>
+    <% end %>
+  </div>
+<% else %>
+  <p style="color: gray;">📭 No pinned notes found. Try pinning one!</p>
+<% end %>
+
 
 <%= link_to "New note", new_note_path %>
