@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Simon's Notes" %>
+
+<h1>My Notes</h1>
+
+<div id="notes">
+  <% @notes.each do |note| %>
+    <%= render note %>
+    <small><%= note.created_at.strftime("%b %d, %Y %H:%M") %></small>
+    
+    <p>
+      <%= link_to "Show this note", note %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New note", new_note_path %>
