@@ -1,9 +1,9 @@
-<div id="<%= dom_id note %>">
-  <div class="border shadow-sm p-4">
+<div id="<%= dom_id note %>" class="mb-6">
+  <div class="shadow-sm p-4">
     <% if note.pinned %>
       <p>📌 Pinned!</p>
     <% end %>
-    <p>
+    <p class="text">
       <strong>Title:</strong>
       <%= note.title %>
     </p>
@@ -12,6 +12,6 @@
       <strong>Body:</strong>
       <%= note.body %>
     </p>
-    <p><%= link_to "Show this note", note %></p>
+    <u><%= link_to "Show this note", note %></u>
   </div>
 </div>
