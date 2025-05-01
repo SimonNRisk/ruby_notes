@@ -7,7 +7,7 @@ class NotesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit notes_url
-    assert_selector "h1", text: "Notes"
+    assert_selector "h1", text: "MY NOTES"
   end
 
   test "should create note" do
